@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volumental Fit - Experience</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="experience.css">
+</head>
+<body>
+    <div class="exp-bg"></div>
+    <div class="exp-grid"></div>
+
+    <header class="exp-header">
+        <a href="index.html" class="btn-pill btn-light">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            BACK TO DEMO STORE
+        </a>
+        <a href="#" class="btn-pill btn-coral">CONNECT TO LEARN MORE</a>
+    </header>
+
+    <main class="exp-main">
+        <div class="quick-fact fade-in">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>
+            Did you know nearly 50% of all apparel bought online is returned?
+        </div>
+        <h1 class="exp-hero">
+            One 
+            <span class="strike-container">
+                <span class="strike-word">size</span>
+                <span class="strike-line"></span>
+                <span class="scan-word">Scan</span>
+            </span> 
+            fits all
+        </h1>
+
+        <div class="exp-3d-model">
+            <img src="top.jpg" alt="Active Wear Top">
+        </div>
+
+        <div class="exp-cta-container">
+            <button class="btn-primary-large" id="start-quiz-btn">Give us 30 more seconds</button>
+            
+            <div class="live-counter-container">
+                <div class="counter-label">Clothes returned due to fit since page load</div>
+                <div class="counter-value" id="live-return-counter">0</div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <div class="progress-indicator">
+        <div class="progress-line"></div>
+        <div class="dot dot-1"></div>
+        <div class="dot dot-2"></div>
+        <div class="dot dot-3"></div>
+        <div class="dot dot-4 active"></div>
+        <div class="progress-label">DIGITAL BRANNOCK</div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div class="modal-overlay" id="quiz-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="close-modal">&times;</button>
+            
+            <div id="quiz-view">
+                <h2>Help us find your fit</h2>
+                
+                <div class="quiz-step">
+                    <h3>1. How comfortable are you getting a <span class="text-highlight">scan of your torso/top</span>?</h3>
+                    <div class="likert-scale">
+                        <label class="likert-option">
+                            <input type="radio" name="comfort" value="1">
+                            <div class="likert-circle size-lg"></div>
+                            <span class="likert-label">Not comfortable<br>at all</span>
+                        </label>
+                        <label class="likert-option">
+                            <input type="radio" name="comfort" value="2">
+                            <div class="likert-circle size-md"></div>
+                        </label>
+                        <label class="likert-option">
+                            <input type="radio" name="comfort" value="3">
+                            <div class="likert-circle size-sm"></div>
+                            <span class="likert-label">Neutral</span>
+                        </label>
+                        <label class="likert-option">
+                            <input type="radio" name="comfort" value="4">
+                            <div class="likert-circle size-md"></div>
+                        </label>
+                        <label class="likert-option">
+                            <input type="radio" name="comfort" value="5">
+                            <div class="likert-circle size-lg"></div>
+                            <span class="likert-label">Very comfortable</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-step">
+                    <h3>2. Which type of apparel do you <span class="text-highlight">return</span> the most?</h3>
+                    <div class="radio-group two-col">
+                        <label class="radio-option">
+                            <input type="radio" name="apparel" value="swimwear">
+                            <span class="radio-custom"></span>
+                            <svg class="option-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                            Swimwear
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="apparel" value="trousers">
+                            <span class="radio-custom"></span>
+                            <svg class="option-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V4z"></path><path d="M12 4v18"></path></svg>
+                            Trousers
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="apparel" value="tops">
+                            <span class="radio-custom"></span>
+                            <svg class="option-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.38 3.46L16 2a8 8 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"></path></svg>
+                            Tops
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="apparel" value="socks">
+                            <span class="radio-custom"></span>
+                            <svg class="option-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v14a4 4 0 008 0v-4"></path><path d="M12 17c0 2.2-1.8 4-4 4s-4-1.8-4-4V7"></path></svg>
+                            Socks
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="apparel" value="hosiery">
+                            <span class="radio-custom"></span>
+                            <svg class="option-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 2h10v20H7z"></path><path d="M7 8h10"></path></svg>
+                            Hosiery
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="apparel" value="activewear">
+                            <span class="radio-custom"></span>
+                            <svg class="option-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path></svg>
+                            Activewear
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-step">
+                    <h3>3. How many times in the last six months have you <span class="text-highlight">returned clothes</span> due to <span class="text-highlight">sizing issues</span>?</h3>
+                    <div class="radio-group two-col">
+                        <label class="radio-option"><input type="radio" name="frequency" value="1-3"> <span class="radio-custom"></span> 1-3</label>
+                        <label class="radio-option"><input type="radio" name="frequency" value="5-10"> <span class="radio-custom"></span> 5-10</label>
+                        <label class="radio-option"><input type="radio" name="frequency" value="11-20"> <span class="radio-custom"></span> 11-20</label>
+                        <label class="radio-option"><input type="radio" name="frequency" value="20+"> <span class="radio-custom"></span> 20+</label>
+                    </div>
+                </div>
+                
+                <div class="modal-actions" style="justify-content: center; margin-top: 40px; position: relative;">
+                    <div class="submit-wrapper" style="width: 100%; position: relative;">
+                        <button class="btn-primary-large btn-disabled" id="submit-quiz-btn" style="width: 100%;">Submit</button>
+                        <div class="tooltip" id="submit-tooltip">Please answer all questions to submit.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="success-view" style="display: none; text-align: center; padding: 40px 20px;">
+                <div class="success-animation">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                </div>
+                <h2 style="margin-top: 20px; font-size: 2rem;">Thank you!</h2>
+                <p style="color: var(--color-text-dark); margin-bottom: 40px;">We appreciate you taking the time to help us find the perfect fit.</p>
+                
+                <div class="opt-in-section" style="text-align: left; background: var(--color-bg); padding: 24px; border-radius: 12px;">
+                    <p style="font-weight: 600; color: var(--color-primary); margin-bottom: 16px;">We're building the future of fit. Want to tag along?</p>
+                    <label class="checkbox-option">
+                        <input type="checkbox" id="stay-in-loop">
+                        <span class="checkbox-custom"></span>
+                        I'm in.
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="experience.js"></script>
+</body>
+</html>
