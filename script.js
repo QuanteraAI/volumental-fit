@@ -156,4 +156,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Chat Widget Logic
+    const testimonialsSection = document.getElementById('testimonials');
+    const chatWidget = document.getElementById('chat-widget-container');
+    const chatPill = document.getElementById('chat-pill');
+    const chatClose = document.getElementById('chat-close');
+    let hasWidgetAppeared = false;
+
+    if (testimonialsSection && chatWidget) {
+        const chatObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasWidgetAppeared) {
+                    chatWidget.classList.add('show');
+                    hasWidgetAppeared = true; // Stays visible for the session
+                }
+            });
+        }, { threshold: 0.2 });
+
+        chatObserver.observe(testimonialsSection);
+    }
+
+    if (chatPill && chatWidget) {
+        chatPill.addEventListener('click', () => {
+            chatWidget.classList.toggle('open');
+        });
+    }
+
+    if (chatClose && chatWidget) {
+        chatClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            chatWidget.classList.remove('open');
+        });
+    }
 });
