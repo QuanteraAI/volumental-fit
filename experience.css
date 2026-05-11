@@ -254,6 +254,12 @@ body {
     opacity: 0.8;
 }
 
+.counter-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+}
+
 .counter-value {
     font-size: 3.8rem;
     font-weight: 800;
@@ -262,6 +268,42 @@ body {
     text-shadow: 0 4px 20px rgba(238, 104, 97, 0.3);
     font-variant-numeric: tabular-nums;
     margin-top: 4px;
+}
+
+.counter-tooltip {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: var(--color-text-dark);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 20;
+}
+
+.counter-tooltip::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 5px 5px 5px;
+    border-style: solid;
+    border-color: transparent transparent var(--color-text-dark) transparent;
+}
+
+.counter-wrapper:hover .counter-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
 }
 
 .btn-primary-large {
